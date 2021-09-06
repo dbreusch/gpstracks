@@ -1,9 +1,0 @@
-[submodule "frontend"]
-	path = frontend
-	url = ./frontend
-[submodule "auth-api"]
-	path = auth-api
-	url = ./auth-api
-[submodule "users-api"]
-	path = users-api
-	url = ./users-api
