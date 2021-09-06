@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  auth:
+    build: ./auth-api
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./auth-api:/app
+      - /app/node_modules
+    env_file:
+      - ./env/auth-api.env
+    container_name: gpstracks_auth
+
+  users:
+    build: ./users-api
+    ports:
+      - '3001:3001'
+    env_file:
+      - ./env/users-api.env
+    container_name: gpstracks_users
+    depends_on:
+      - auth
+
+  frontend:
+    build: ./frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend/src:/app/src
+    stdin_open: true
+    tty: true
+    container_name: gpstracks_frontend
+    depends_on:
+      - users
