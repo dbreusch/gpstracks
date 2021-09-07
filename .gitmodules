@@ -1,0 +1,9 @@
+[submodule "auth-api"]
+	path = auth-api
+	url = https://github.com/dbreusch/auth-api
+[submodule "users-api"]
+	path = users-api
+	url = https://github.com/dbreusch/users-api
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/dbreusch/gpstracks-frontend
